@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users do
+    
     member do
       get 'edit_basic_info'
       patch 'update_basic_info'
@@ -15,5 +16,11 @@ Rails.application.routes.draw do
       patch 'attendances/update_one_month' # この行が追加対象です
     end
     resources :attendances, only: :update # この行を追加します。
+    
+    collection do 
+      get 'search'
+    end
   end
+  
 end
+
