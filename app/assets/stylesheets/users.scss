@@ -61,3 +61,20 @@
   margin: 15px 0;
   width: 30%;
 }
+
+
+/* 検索用レイアウト */
+.search {
+  display: flex;
+	justify-content: center;
+}
+
+/* 編集一覧&個別勤怠の土日のみ色替え */
+
+.wday0 {
+  color : red;
+}
+
+.wday6 {
+  color : blue;
+}

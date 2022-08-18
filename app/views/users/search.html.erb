@@ -1,19 +1,23 @@
+<% provide(:title, 'search_users') %>
 <h1>検索結果</h1>
-<%= form_with url: search_users_path, method: :get, local: true do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit :search %>
-<% end %>
-<table>
-  <thead>
-    <tr>
-      <th>名前</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user %></td>
-      </tr>
+<div class="col-md-10 col-md-offset-5">
+    <%= form_with url: search_users_path, method: :get, local: true do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit :検索 %>
     <% end %>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, user %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
